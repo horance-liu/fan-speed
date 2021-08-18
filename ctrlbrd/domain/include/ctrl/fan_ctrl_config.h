@@ -9,6 +9,7 @@ EXTERN_STDC_BEGIN
 typedef enum FanBrdModeType {
     FAN_BRD_MODEL_AUTO,
     FAN_BRD_MODEL_MANUAL,
+    FAN_BRD_MODEL_MAX,
 } FanBrdModeType;
 
 #define MAX_SRV_BRD_NUM 2

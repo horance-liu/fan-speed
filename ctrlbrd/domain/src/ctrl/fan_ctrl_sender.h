@@ -10,9 +10,13 @@
 
 #include "keywords.h"
 #include "status.h"
+#include "pub_ctrbrd_fanbrd_itf.h"
 
 DEF_INTERFACE(FanCtrlSender) {
-    virtual Status Send(const void*) = 0;
+    Status SendAdjustSpeedCmd(U32 slot, FanSpeed);
+
+private:
+    virtual Status Send(U32 eventId, const void* event) = 0;
 };
 
 #endif /* HA9A1FD70_A549_4C03_98DF_21BBB7F7AF95 */

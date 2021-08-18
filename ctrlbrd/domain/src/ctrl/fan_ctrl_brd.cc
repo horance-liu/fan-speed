@@ -14,7 +14,7 @@ namespace {
 struct FanCtrlBrdImpl : FanCtrlBrd {
 private:
     Status Config(const FanCtrlConfig& conf) override {
-        sender = MakeSender(conf.commType);
+        FanCtrlSender *sender = MakeSender(conf.commType);
         ASSERT_NOT_NIL(sender);
 
         return fanBrds.Config(conf, *sender, alert);
@@ -41,7 +41,6 @@ private:
     }
 
 private:
-    FanCtrlSender *sender = nullptr;
     union {
         Placement<SpiFanCtrlSender>   spi;
         Placement<Rs581FanCtrlSender> rs581;

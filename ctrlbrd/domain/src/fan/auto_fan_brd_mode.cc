@@ -1,12 +1,13 @@
 #include "auto_fan_brd_mode.h"
-#include "fan_brd_adjuster.h"
+#include "fan_ctrl_sender.h"
 #include "array_size.h"
 
-AutoFanBrdMode::AutoFanBrdMode(FanBrdAdjuster& adjuster) : adjuster(adjuster) {
+Status AutoFanBrdMode::ManualAdjust(U32 /* slot */, FanSpeed /* speed */) {
+    return E_PERMISSION_DENIED;
 }
 
 Status AutoFanBrdMode::OnError(U32 slot) {
-    return adjuster.Adjust(slot, FAN_SPEED_HIGH);
+    return sender.SendAdjustSpeedCmd(slot, FAN_SPEED_HIGH);
 }
 
 namespace {
@@ -35,5 +36,5 @@ FanSpeed GetFanSpeed(U32 temp) {
 
 Status AutoFanBrdMode::OnHot(U32 slot, U32 temp) {
     FanSpeed speed = GetFanSpeed(temp);
-    return adjuster.Adjust(slot, speed);
+    return sender.SendAdjustSpeedCmd(slot, speed);
 }

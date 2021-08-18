@@ -5,7 +5,7 @@
 
 struct SpiFanCtrlSender : FanCtrlSender {
 private:
-    Status Send(const void*) override;
+    Status Send(U32 eventId, const void* event) override;
 };
 
 #endif /* H520E62C2_A87D_4602_B2BE_1D9E41EFFD4A */

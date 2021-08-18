@@ -13,13 +13,13 @@
 struct FanBrdState;
 struct FanBrdMode;
 struct FanBrdSpec;
-struct FanBrdAdjuster;
+struct FanBrdChanger;
 
 DEF_INTERFACE(FanBrd) {
     HAS_ROLE(FanBrdSpec);
     HAS_ROLE(FanBrdState);
     HAS_ROLE(FanBrdMode);
-    HAS_ROLE(FanBrdAdjuster);
+    HAS_ROLE(FanBrdChanger);
 };
 
 

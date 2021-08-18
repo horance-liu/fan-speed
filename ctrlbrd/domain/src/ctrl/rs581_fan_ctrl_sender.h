@@ -12,7 +12,7 @@
 
 struct Rs581FanCtrlSender : FanCtrlSender {
 private:
-    Status Send(const void*) override;
+    Status Send(U32 eventId, const void* event) override;
 };
 
 #endif /* HBCA4A81B_13BA_486C_B51C_EBE4FA41967F */

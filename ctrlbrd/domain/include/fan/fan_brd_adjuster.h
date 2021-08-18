@@ -6,15 +6,15 @@
 #include "pub_ctrbrd_fanbrd_itf.h"
 
 struct FanBrdSpec;
-struct FanCtrlSender;
 
 DEF_INTERFACE(FanBrdAdjuster) {
-    Status Adjust(FanSpeed speed);
-    Status Adjust(U32 slot, FanSpeed speed);
+    FanBrdAdjuster(FanBrdSpec&);
+
+    Status ManualAdjust(FanSpeed speed);
+    virtual Status ManualAdjust(U32 slot, FanSpeed speed) = 0;
 
 private:
-    USE_ROLE(FanBrdSpec);
-    USE_ROLE(FanCtrlSender);
+    FanBrdSpec &spec;
 };
 
 #endif /* B310558C_8EE4_4001_B6BC_387E4983DAA0 */

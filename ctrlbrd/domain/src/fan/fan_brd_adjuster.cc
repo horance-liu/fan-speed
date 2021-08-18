@@ -1,15 +1,9 @@
 #include "fan_brd_adjuster.h"
 #include "fan_brd_spec.h"
-#include "fan_ctrl_sender.h"
 
-Status FanBrdAdjuster::Adjust(FanSpeed speed) {
-    return Adjust(ROLE(FanBrdSpec).GetId(), speed);
+FanBrdAdjuster::FanBrdAdjuster(FanBrdSpec& spec) : spec(spec) {
 }
 
-Status FanBrdAdjuster::Adjust(U32 slot, FanSpeed speed) {
-    FanAdjustSpeedCmd cmd = {
-        .slot = slot,
-        .speed = speed,
-    };
-    return ROLE(FanCtrlSender).Send(&cmd);
+Status FanBrdAdjuster::ManualAdjust(FanSpeed speed) {
+    return ManualAdjust(spec.GetId(), speed);
 }

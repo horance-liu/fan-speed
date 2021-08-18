@@ -23,6 +23,7 @@ enum : Status {
     E_INTERNAL = 13,
     E_UNAVAILABLE = 14,
     E_DATA_LOSS = 15,
+    E_NIL_POINTER = 15,
 };
 
 #endif /* H56456FA3_3376_45C6_823F_4BA82733A64A */

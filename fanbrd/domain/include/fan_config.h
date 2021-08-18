@@ -13,6 +13,8 @@ enum FanDrvType {
 };
 
 struct FanConfig {
+    U32 slot;
+
     U32 numOfDrv;
     FanDrvType drvs[MAX_FAN_DRV_NUM];
 };

@@ -8,7 +8,7 @@ add_executable(fanbrd_domain_test ${srcs})
 
 target_link_libraries(fanbrd_domain_test
   PRIVATE 
-    fanbrd::domain     # sut
+    fanbrd::domain      # sut
     cctest cctest_main  # xunit
 )
 

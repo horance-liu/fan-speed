@@ -21,6 +21,16 @@ typedef enum FanSpeed {
     FAN_SPEED_HIGH = 50,
 } FanSpeed;
 
+typedef struct FanAdjustSpeedCmd {
+    U32 slot;
+    FanSpeed speed;
+} FanAdjustSpeedCmd;
+
+typedef enum FanStateType {
+    FAN_SPEED_OK,
+    FAN_SPEED_ERR,
+} FanStateType;
+
 EXTERN_STDC_END
 
 #endif /* H00C2614B_1899_41D0_BFC6_A46FD1B775CA */

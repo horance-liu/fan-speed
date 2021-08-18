@@ -11,6 +11,7 @@ namespace {
 struct FanBrdImpl : FanBrd {
 private:
     Status Config(const FanConfig& conf) override {
+        slot = conf.slot;
         for (U32 i = 0; i < conf.numOfDrv; i++) {
             new (fanBoxs[i].Alloc()) FanBox(conf.drvs[i]);
             numOfFanBox++;
@@ -49,10 +50,8 @@ private:
 
 private:
     Status Run() override {
-        if (IsError()) {
-            ASSERT_EXEC_SUCC(notifier.Notify());
-        }
-        return E_OK;
+        FanStateType state = IsError() ? FAN_SPEED_ERR : FAN_SPEED_OK;
+        return notifier.Notify(slot, state);
     }
 
 private:
@@ -65,10 +64,11 @@ private:
     }
 
 private:
-    U32 numOfFanBox = 0;
-    Placement<FanBox> fanBoxs[MAX_FAN_DRV_NUM]; 
-
+    U32 slot;
     FanNotifier notifier;
+
+    U32 numOfFanBox = 0;
+    Placement<FanBox> fanBoxs[MAX_FAN_DRV_NUM];
 };
 } // namespace
 

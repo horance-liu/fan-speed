@@ -31,4 +31,10 @@ role& ROLE(role) const override {                             \
    return const_cast<type&>(static_cast<const type&>(*this)); \
 }
 
+//////////////////////////////////////////////////////////////////
+#define IMPL_ROLE_WITH_VAR(role, var)                       \
+role& ROLE(role) const override {                             \
+   return const_cast<role&>(static_cast<const role&>(var)); \
+}
+
 #endif /* H996AEB02_CF8D_4123_8C07_0A231C59F042 */

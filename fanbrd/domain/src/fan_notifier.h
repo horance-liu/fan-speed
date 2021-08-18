@@ -2,9 +2,10 @@
 #define F2AD136D_316C_4E05_A09C_C9F60491D516
 
 #include "status.h"
+#include "pub_ctrbrd_fanbrd_itf.h"
 
 struct FanNotifier {
-    Status Notify();
+    Status Notify(U32 slot, FanStateType);
 };
 
 #endif /* F2AD136D_316C_4E05_A09C_C9F60491D516 */

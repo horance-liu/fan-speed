@@ -3,6 +3,8 @@
 #include "avc/avc_v1_fan_drv.h"
 #include "avc/avc_v2_fan_drv.h"
 
+namespace fanbrd {
+
 namespace {
 FanDrv* DoMake(FanDrvType type) {
     switch (type) {
@@ -46,3 +48,5 @@ Status FanBox::Stop() {
 bool FanBox::IsError() const {
     return state.IsError() || drv->IsError();
 }
+
+} // namespace fanbrd

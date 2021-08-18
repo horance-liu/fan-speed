@@ -4,6 +4,8 @@
 #include "keywords.h"
 #include "status.h"
 
+namespace ctrlbrd {
+
 struct FanBrdSpec;
 struct FanBrdListener;
 
@@ -20,5 +22,7 @@ private:
 private:
     USE_ROLE(FanBrdSpec);
 };
+
+} // namespace ctrlbrd
 
 #endif /* EC1B644B_1D22_4DD4_A4C5_EDD1B247AA17 */

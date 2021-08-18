@@ -5,11 +5,15 @@
 #include "status.h"
 #include "pub_ctrbrd_fanbrd_itf.h"
 
+namespace fanbrd {
+
 DEF_INTERFACE(FanDrv) {
     static FanDrv* Nil();
 
     virtual Status Adjust(FanSpeed speed) = 0;
     virtual bool IsError() const = 0;
 };
+
+} // namespace fanbrd
 
 #endif /* A05CFFBF_68D5_4211_AA04_E5979CE075B1 */

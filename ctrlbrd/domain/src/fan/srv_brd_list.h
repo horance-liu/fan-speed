@@ -6,6 +6,8 @@
 #include "fan_ctrl_config.h"
 #include "placement.h"
 
+namespace ctrlbrd {
+
 struct FanCtrlAlert;
 struct FanBrdMode;
 
@@ -19,5 +21,6 @@ private:
     Placement<SrvBrd> srvBrds[MAX_SRV_BRD_NUM];
 };
 
+} // namespace ctrlbrd
 
 #endif /* H45C25E35_AF7D_4770_9A3F_35128658051F */

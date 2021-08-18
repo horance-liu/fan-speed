@@ -10,6 +10,8 @@
 
 #include "assertions.h"
 
+namespace ctrlbrd {
+
 Status FanBrdAction::InitConfig(const FanCtrlConfig& conf) {
     return FanCtrlBrd::Inst().Config(conf);
 }
@@ -44,3 +46,5 @@ Status FanBrdAction::OnTempChanged(U32 srvBrdSlot, U32 temp) {
 
     return srvBrd->Update(temp);
 }
+
+} // namespace ctrlbrd

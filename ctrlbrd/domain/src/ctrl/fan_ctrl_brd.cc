@@ -9,6 +9,8 @@
 #include "assertions.h"
 #include "placement.h"
 
+namespace ctrlbrd {
+
 namespace {
 
 struct FanCtrlBrdImpl : FanCtrlBrd {
@@ -55,3 +57,5 @@ FanCtrlBrd& FanCtrlBrd::Inst() {
     static FanCtrlBrdImpl inst;
     return inst;
 }
+
+} // namespace ctrlbrd

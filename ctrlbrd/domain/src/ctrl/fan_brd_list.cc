@@ -1,18 +1,15 @@
 #include "fan_brd_list.h"
 
 #include "srv_brd_list.h"
-//#include "fan_ctrl_config.h"
 #include "fan_ctrl_alert.h"
-//
-//#include "fan_brd.h"
-//#include "srv_brd.h"
 
 #include "fan_brd_spec.h"
 #include "fan_brd_state.h"
 #include "fan_brd_changer.h"
 
-//#include "fan_brd_adjuster.h"
 #include "assertions.h"
+
+namespace ctrlbrd {
 
 namespace {
 
@@ -95,3 +92,5 @@ SrvBrd* FanBrdList::FindSrvBrd(U32 slot) const {
     }
     return nullptr;
 }
+
+} // namespace ctrlbrd

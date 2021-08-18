@@ -1,5 +1,7 @@
 #include "fan_state.h"
 
+namespace fanbrd {
+
 inline Status FanState::Ok(State to) {
     state = to;
     return E_OK;
@@ -25,3 +27,5 @@ bool FanState::IsReady() const {
 bool FanState::IsError() const {
     return state == ERROR;
 }
+
+} // namespace fanbrd

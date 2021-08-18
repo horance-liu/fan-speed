@@ -1,5 +1,7 @@
 #include "fan_brd_changer.h"
 
+namespace ctrlbrd {
+
 FanBrdMode* FanBrdChanger::Create(FanBrdModeType type) {
     this->type = type;
     switch (type) {
@@ -39,6 +41,5 @@ const FanBrdMode& FanBrdChanger::GetMode() const {
     return *mode;
 }
 
-//FanBrdMode& FanBrdChanger::GetMode() {
-//    return *mode;
-//}
+} // namespace ctrlbrd
+

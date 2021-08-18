@@ -3,6 +3,8 @@
 #include "srv_brd_listener.h"
 #include "assertions.h"
 
+namespace ctrlbrd {
+
 SrvBrd::SrvBrd(U32 slot) : slot(slot) {
 }
 
@@ -33,3 +35,5 @@ Status SrvBrd::Update(U32 temp) {
     }
     return E_OK;
 }
+
+} // namespace ctrlbrd

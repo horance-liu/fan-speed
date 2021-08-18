@@ -12,10 +12,13 @@
 #include "fan_brd.h"
 #include "status.h"
 
+struct FanCtrlConfig;
+
+namespace ctrlbrd {
+
 struct FanBrd;
 struct SrvBrd;
 
-struct FanCtrlConfig;
 struct FanCtrlSender;
 struct FanCtrlAlert;
 
@@ -29,5 +32,7 @@ private:
     U32 numOfFanBrd = 0;
     FanBrd* fanBrds[MAX_FAN_BRD_NUM] = {nullptr};
 };
+
+} // namespace ctrlbrd
 
 #endif /* HAEE59019_596E_4333_9E8E_4C3309456442 */

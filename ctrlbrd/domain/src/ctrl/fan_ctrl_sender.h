@@ -12,11 +12,15 @@
 #include "status.h"
 #include "pub_ctrbrd_fanbrd_itf.h"
 
+namespace ctrlbrd {
+
 DEF_INTERFACE(FanCtrlSender) {
     Status SendAdjustSpeedCmd(U32 slot, FanSpeed);
 
 private:
     virtual Status Send(U32 eventId, const void* event) = 0;
 };
+
+} // namespace ctrlbrd
 
 #endif /* HA9A1FD70_A549_4C03_98DF_21BBB7F7AF95 */

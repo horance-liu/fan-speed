@@ -5,6 +5,9 @@
 #include "status.h"
 
 struct FanCtrlConfig;
+
+namespace ctrlbrd {
+
 struct FanBrd;
 struct SrvBrd;
 
@@ -15,5 +18,7 @@ DEF_INTERFACE(FanCtrlBrd) {
     virtual FanBrd* FindFanBrd(U32 slot) = 0;
     virtual SrvBrd* FindSrvBrd(U32 slot) = 0;
 };
+
+} // namespace ctrlbrd
 
 #endif /* E94BCC6E_2394_4DA9_988B_230D7F68F0E7 */

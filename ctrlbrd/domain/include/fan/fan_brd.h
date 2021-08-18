@@ -10,6 +10,8 @@
 
 #include "keywords.h"
 
+namespace ctrlbrd {
+
 struct FanBrdState;
 struct FanBrdMode;
 struct FanBrdSpec;
@@ -22,6 +24,6 @@ DEF_INTERFACE(FanBrd) {
     HAS_ROLE(FanBrdChanger);
 };
 
-
+} // namespace ctrlbrd
 
 #endif /* HE728A470_5E21_4338_B1B6_2176AAA5C63A */

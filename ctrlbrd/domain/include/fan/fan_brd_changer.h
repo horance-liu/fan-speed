@@ -15,6 +15,8 @@
 
 #include "placement.h"
 
+namespace ctrlbrd {
+
 struct FanCtrlSender;
 struct FanBrdSpec;
 
@@ -43,5 +45,7 @@ private:
     USE_ROLE(FanBrdSpec);
     USE_ROLE(FanCtrlSender);
 };
+
+} // namespace ctrlbrd
 
 #endif /* H56827870_F847_4485_AD9C_D18AC098F73C */

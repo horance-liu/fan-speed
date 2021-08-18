@@ -4,6 +4,8 @@
 
 #include "assertions.h"
 
+namespace ctrlbrd {
+
 Status FanBrdState::Add(FanBrdListener& listener) {
     ASSERT_TRUE(numOfListener < MAX_FAN_BRD_STATE_LISTENER_NUM);
 
@@ -18,3 +20,5 @@ Status FanBrdState::OnError() {
     }
     return E_OK;
 }
+
+} // namespace ctrlbrd

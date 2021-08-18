@@ -5,6 +5,8 @@
 #include "fan_config.h"
 #include "fan_state.h"
 
+namespace fanbrd {
+
 struct FanDrv;
 
 struct FanBox : FanUnit {
@@ -21,5 +23,7 @@ private:
     FanDrv *drv;
     FanState state;
 };
+
+} // namespace fanbrd
 
 #endif /* C41CFCCB_7FCB_4274_BD90_A9A7CF7317A4 */

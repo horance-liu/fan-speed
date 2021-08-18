@@ -4,10 +4,14 @@
 #include "fan_brd_listener.h"
 #include "srv_brd_listener.h"
 
+namespace ctrlbrd {
+
 struct FanCtrlAlert : FanBrdListener, SrvBrdListener {
 private:
     Status OnError(U32 slot) override;
     Status OnHot(U32 slot, U32 temp) override;
 };
+
+} // namespace ctrlbrd
 
 #endif /* D3EEB047_9D3A_44D3_BAC1_39B57FA8C778 */

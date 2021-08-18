@@ -2,6 +2,8 @@
 #include "fan_ctrl_sender.h"
 #include "array_size.h"
 
+namespace ctrlbrd {
+
 Status AutoFanBrdMode::ManualAdjust(U32 /* slot */, FanSpeed /* speed */) {
     return E_PERMISSION_DENIED;
 }
@@ -38,3 +40,5 @@ Status AutoFanBrdMode::OnHot(U32 slot, U32 temp) {
     FanSpeed speed = GetFanSpeed(temp);
     return sender.SendAdjustSpeedCmd(slot, speed);
 }
+
+} // namespace ctrlbrd

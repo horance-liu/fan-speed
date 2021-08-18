@@ -7,6 +7,8 @@
 #include "assertions.h"
 #include "placement.h"
 
+namespace fanbrd {
+
 namespace {
 struct FanBrdImpl : FanBrd {
 private:
@@ -76,3 +78,5 @@ FanBrd& FanBrd::Inst() {
     static FanBrdImpl inst;
     return inst;
 }
+
+} // namespace fanbrd

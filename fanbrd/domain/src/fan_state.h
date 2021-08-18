@@ -1,14 +1,9 @@
-/*
- * fan_state.h
- *
- *  Created on: Aug 17, 2021
- *      Author: horance
- */
-
 #ifndef H448821D8_451A_4032_B9C1_886B0F243819
 #define H448821D8_451A_4032_B9C1_886B0F243819
 
 #include "status.h"
+
+namespace fanbrd {
 
 struct FanState {
     enum State {
@@ -28,5 +23,7 @@ private:
 private:
     State state = INIT;
 };
+
+} // namespace fanbrd
 
 #endif /* H448821D8_451A_4032_B9C1_886B0F243819 */

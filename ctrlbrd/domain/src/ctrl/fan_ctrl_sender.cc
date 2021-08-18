@@ -10,6 +10,8 @@
 #include "fan_ctrl_sender.h"
 #include "pub_ctrbrd_fanbrd_event.h"
 
+namespace ctrlbrd {
+
 Status FanCtrlSender::SendAdjustSpeedCmd(U32 slot, FanSpeed speed) {
     FanAdjustSpeedCmd cmd = {
         .slot = slot,
@@ -17,3 +19,5 @@ Status FanCtrlSender::SendAdjustSpeedCmd(U32 slot, FanSpeed speed) {
     };
     return Send(EV_CTRLBRD_FANBRD_START_ID, &cmd);
 }
+
+} // namespace ctrlbrd

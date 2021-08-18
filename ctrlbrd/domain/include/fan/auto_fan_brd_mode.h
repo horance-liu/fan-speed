@@ -3,6 +3,8 @@
 
 #include "fan_brd_mode.h"
 
+namespace ctrlbrd {
+
 struct FanCtrlSender;
 
 struct AutoFanBrdMode : FanBrdMode {
@@ -13,5 +15,7 @@ private:
     Status OnHot(U32 slot, U32 temp) override;
     Status ManualAdjust(U32 slot, FanSpeed speed) override;
 };
+
+} // namespace ctrlbrd
 
 #endif /* EBB8AA2B_19D9_453A_8A3D_68465BAE360D */

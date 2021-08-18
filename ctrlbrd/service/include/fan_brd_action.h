@@ -7,6 +7,8 @@
 
 struct FanCtrlConfig;
 
+namespace ctrlbrd {
+
 struct FanBrdAction {
     Status InitConfig(const FanCtrlConfig&);
     Status ManualAdjust(U32 fanBrdSlot, FanSpeed);
@@ -15,5 +17,7 @@ struct FanBrdAction {
     Status OnFanBrdErr(U32 fanBrdSlot);
     Status OnTempChanged(U32 srvBrdSlot, U32 temp);
 };
+
+} // namespace ctrlbrd
 
 #endif /* HB27D5960_6AC3_4187_B5E0_1EA8BBC90A53 */

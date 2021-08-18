@@ -3,6 +3,8 @@
 
 #include "status.h"
 
+namespace ctrlbrd {
+
 struct SrvBrdListener;
 
 struct SrvBrd {
@@ -26,5 +28,6 @@ private:
     SrvBrdListener *listeners[MAX_SRV_BRD_TEMP_LISENER_NUM];
 };
 
+} // namespace ctrlbrd
 
 #endif /* H5D93C52E_6343_43F0_9F1B_FD1575078616 */

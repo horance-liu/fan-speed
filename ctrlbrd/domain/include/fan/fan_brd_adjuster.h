@@ -5,6 +5,8 @@
 #include "status.h"
 #include "pub_ctrbrd_fanbrd_itf.h"
 
+namespace ctrlbrd {
+
 struct FanBrdSpec;
 
 DEF_INTERFACE(FanBrdAdjuster) {
@@ -16,5 +18,7 @@ DEF_INTERFACE(FanBrdAdjuster) {
 private:
     FanBrdSpec &spec;
 };
+
+} // namespace ctrlbrd
 
 #endif /* B310558C_8EE4_4001_B6BC_387E4983DAA0 */

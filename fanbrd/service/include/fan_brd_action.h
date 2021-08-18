@@ -6,6 +6,8 @@
 
 struct FanConfig;
 
+namespace fanbrd {
+
 struct FanBrdAction {
     Status Start();
     Status Stop();
@@ -13,5 +15,7 @@ struct FanBrdAction {
     Status Config(const FanConfig&);
     Status Adjust(FanSpeed speed);  
 };
+
+} // namespace fanbrd
 
 #endif /* BB0AC7EE_5C70_4B9D_A425_36F06EC0D61E */

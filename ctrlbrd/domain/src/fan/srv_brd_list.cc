@@ -3,6 +3,8 @@
 #include "fan_ctrl_alert.h"
 #include "assertions.h"
 
+namespace ctrlbrd {
+
 Status SrvBrdList::Config(const FanBrdConfig& conf, FanCtrlAlert& alert, FanBrdMode& mode) {
     for (U32 i = 0; i < conf.numOfSvrBrd; i++) {
         ASSERT_TRUE(numOfSrvBrd < MAX_SRV_BRD_NUM);
@@ -21,3 +23,5 @@ const SrvBrd* SrvBrdList::Find(U32 slot) const {
     }
     return nullptr;
 }
+
+} // namespace ctrlbrd
